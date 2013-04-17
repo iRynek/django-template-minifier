@@ -47,7 +47,7 @@ TEMPLATE_MINIFER_TEMPLATE_TAGS = False # default = True
 
 * turn off all stripping
 ```python
-TEMPLATE_MINIFER = False; default = True
+TEMPLATE_MINIFER = False # default = True
 ```
 
 * run Your own strip_function, which preprocess templates
@@ -59,4 +59,5 @@ TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_templ
 ```python
 if DEBUG:
     TEMPLATE_MINIFER = False
+
 ```
