@@ -35,15 +35,22 @@ Advanced usage:
 
 Using modified settings You can:
 * turn off stripping spaces between HTML tags
-	TEMPLATE_MINIFIER_HTML_TAGS = False; default = True
+
+| 	 TEMPLATE_MINIFIER_HTML_TAGS = False # default = True
+
 * turn off stripping spaces between Django template tags (\s{%, %}\s)
-    TEMPLATE_MINIFER_TEMPLATE_TAGS = False; default = True
+
+|    TEMPLATE_MINIFER_TEMPLATE_TAGS = False # default = True
+
 * turn off all stripping
-    TEMPLATE_MINIFER = False; default = True
+
+|    TEMPLATE_MINIFER = False; default = True
+
 * run Your own strip_function, which preprocess templates
-    TEMPLATE_MINIFER_STRIP_FUNCTION = ; default = template_minifier.
 
-Using only in production - just paste this into Your Django project settings's module:
+|    TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
 
-if DEBUG:
-    TEMPLATE_MINIFER = False
+* **use only in production**
+
+| if DEBUG:
+|     TEMPLATE_MINIFER = False

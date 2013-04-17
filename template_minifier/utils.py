@@ -8,7 +8,7 @@ from django.conf import settings
 
 def strip_spaces_in_template(template_source):
     """
-    Default function used for preprocess templates.
+    Default function used to preprocess templates.
     
     Use settings.TEMPLATE_MINIFIER_HTML_TAGS or 
     settings.TEMPLATE_MINIFIER_TEMPLATE_TAGS to change
