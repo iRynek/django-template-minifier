@@ -6,8 +6,7 @@ Django package, providing simple template loader. It reduces HTML output in temp
 
 
 Package Installation
-========================
-
+-----------
 
 * pip install django-template-minifier
 * [download package](https://github.com/), unzip and run python ./setup.py install
@@ -15,8 +14,7 @@ Package Installation
 
 
 Basic usage
-========================
-
+-----------
 
 Modify Your Django project settings's module:
 
@@ -32,8 +30,7 @@ Be happy having no more spaces and new lines in Your templates!
 
 
 Advanced usage:
-========================
-
+-----------
 
 Using modified settings You can:
 * turn off stripping spaces between HTML tags
