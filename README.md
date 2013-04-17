@@ -19,12 +19,13 @@ Basic usage
 
 
 Modify Your Django project settings's module:
-
+```python
 TEMPLATE_LOADERS = (('django.template.loaders.cached.Loader', (
         'template_minifier.template.loaders.filesystem.Loader',
         'template_minifier.template.loaders.app_directories.Loader',
     )),
 )
+```
 
 Be happy having no more spaces and new lines in Your templates!
 
@@ -35,22 +36,27 @@ Advanced usage:
 
 Using modified settings You can:
 * turn off stripping spaces between HTML tags
-
-| 	 TEMPLATE_MINIFIER_HTML_TAGS = False # default = True
+```python
+TEMPLATE_MINIFIER_HTML_TAGS = False # default = True
+```
 
 * turn off stripping spaces between Django template tags (\s{%, %}\s)
-
-|    TEMPLATE_MINIFER_TEMPLATE_TAGS = False # default = True
+```python
+TEMPLATE_MINIFER_TEMPLATE_TAGS = False # default = True
+```
 
 * turn off all stripping
-
-|    TEMPLATE_MINIFER = False; default = True
+```python
+TEMPLATE_MINIFER = False; default = True
+```
 
 * run Your own strip_function, which preprocess templates
-
-|    TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
+```python
+TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
+```
 
 * **use only in production**
-
-| if DEBUG:
-|     TEMPLATE_MINIFER = False
+```python
+if DEBUG:
+    TEMPLATE_MINIFER = False
+```
