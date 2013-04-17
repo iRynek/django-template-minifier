@@ -8,7 +8,7 @@ Django package, providing simple template loader. It reduces HTML output in temp
 Package Installation
 -----------
 
-* pip install django-template-minifier
+* **pip install django-template-minifier**
 * [download package](https://github.com/), unzip and run python ./setup.py install
 * copy template_minifier directory to Your **PYTHONPATH**
 
