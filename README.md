@@ -63,3 +63,28 @@ TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_templ
 if DEBUG:
     TEMPLATE_MINIFER = False
 ```
+
+Known issues:
+-----------
+* Don't use // one line comments in Your inline javascript &lt;script&gt; or .js templates. In some cases,
+if You are using lot of {% if %} there, it can comment out }; or }, for example:
+
+```js
+// comment something - !!it-s evil!!
+{% if %}
+function name(){
+}
+{% endif %}
+```
+
+**Use /* */ instead**
+
+```js
+/* set to something it */
+{% if %}
+function name(){
+}
+{% endif %}
+```
+
+Or set TEMPLATE_MINIFER_TEMPLATE_TAGS = False

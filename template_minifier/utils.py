@@ -21,8 +21,8 @@ def strip_spaces_in_template(template_source):
         template_source = re.sub(r'>\s+<', '><', template_source)
 
     if (getattr(settings, 'TEMPLATE_MINIFIER_TEMPLATE_TAGS', True)):
-        template_source = re.sub(r'\s+{[ +]?%', '{%', template_source)
-        template_source = re.sub(r'%[ +]?}\s+', '%}', template_source)
+        template_source = re.sub(r'\s+{ ?%', ' {%', template_source)
+        template_source = re.sub(r'% ?}\s+', '%} ', template_source)
 
     return template_source
 
