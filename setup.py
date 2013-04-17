@@ -8,6 +8,7 @@ setup(name='django-template-minifier',
     author='Leszek Piatek',
     author_email='lpiatek@gmail.com',
     url='https://github.com/iRynek/django-template-minifier',
+    license='GPL',
     packages=[
         'template_minifier',
         'template_minifier.template',
