@@ -9,8 +9,13 @@ Package Installation
 -----------
 
 * **pip install django-template-minifier** (yup we highly recommend [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does)!!)
-* [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run python ./setup.py install
-* copy template_minifier directory to Your **PYTHONPATH**
+* or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
+
+```bash
+python ./setup.py install
+```
+
+* or copy template_minifier directory to Your **PYTHONPATH**
 
 
 Basic usage
