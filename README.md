@@ -8,8 +8,8 @@ Django package, providing simple template loader. It reduces HTML output in temp
 Package Installation
 -----------
 
-* **pip install django-template-minifier**
-* [download package](https://github.com/), unzip and run python ./setup.py install
+* **pip install django-template-minifier** (yup we highly recommend [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does)!!)
+* [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run python ./setup.py install
 * copy template_minifier directory to Your **PYTHONPATH**
 
 
@@ -70,7 +70,7 @@ Known issues:
 if You are using lot of {% if %} there, it can comment out }; or }, for example:
 
 ```js
-// comment something - !!it-s evil!!
+// comment something - !!it's evil!!
 {% if %}
 function name(){
 }
@@ -80,11 +80,11 @@ function name(){
 **Use /* */ instead**
 
 ```js
-/* set to something it */
+/* comment something - it's nice and clean <3! */
 {% if %}
 function name(){
 }
 {% endif %}
 ```
 
-Or set TEMPLATE_MINIFER_TEMPLATE_TAGS = False
+Or just set TEMPLATE_MINIFER_TEMPLATE_TAGS = False
