@@ -12,10 +12,10 @@ Package Installation
 * or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
 
 ```bash
-python ./setup.py install
+python setup.py install
 ```
 
-* or copy template_minifier directory to Your **PYTHONPATH**
+* or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your **PYTHONPATH**
 
 
 Basic usage
