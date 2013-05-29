@@ -8,10 +8,10 @@ Things to note:
 * It **does not** make any fancy compression, to do that use [GZip Middleware](https://docs.djangoproject.com/en/dev/ref/middleware/#module-django.middleware.gzip).
 * To compress CSS and JS use [django-compressor](https://github.com/jezdez/django_compressor).
 
-Package Installation
+Installation
 -----------
 
-* **pip install django-template-minifier** (yup we highly recommend [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does)!!)
+* **pip install django-template-minifier** (yup we highly recommend [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does))
 * or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
 
 ```bash
