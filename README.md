@@ -50,26 +50,26 @@ TEMPLATE_MINIFIER_HTML_TAGS = False # default = True
 * turn off stripping spaces between Django template tags (\s{%, %}\s)
 
 ```python
-TEMPLATE_MINIFER_TEMPLATE_TAGS = False # default = True
+TEMPLATE_MINIFIER_TEMPLATE_TAGS = False # default = True
 ```
 
 * turn off all stripping
 
 ```python
-TEMPLATE_MINIFER = False # default = True
+TEMPLATE_MINIFIER = False # default = True
 ```
 
 * run Your own strip_function, which preprocess templates
 
 ```python
-TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
+TEMPLATE_MINIFIER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
 ```
 
 * **use only in production**
 
 ```python
 if DEBUG:
-    TEMPLATE_MINIFER = False
+    TEMPLATE_MINIFIER = False
 ```
 
 Known issues:
@@ -95,4 +95,4 @@ function name(){
 {% endif %}
 ```
 
-Or just set TEMPLATE_MINIFER_TEMPLATE_TAGS = False
+Or just set TEMPLATE_MINIFIER_TEMPLATE_TAGS = False
