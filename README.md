@@ -23,7 +23,7 @@ pip install django-template-pages
 python setup.py install
 ```
 
-* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your **PYTHONPATH**
+* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your ``PYTHONPATH``
 
 
 Basic usage
