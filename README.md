@@ -14,7 +14,7 @@ Installation
 * via [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does) - yup we highly recommend it!
 
 ```bash
-pip install django-template-pages
+pip install django-template-minifier
 ```
 
 * or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
