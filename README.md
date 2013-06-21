@@ -1,7 +1,7 @@
 django-template-minifier
 ========================
 
-Django package, providing simple template loader. It reduces HTML output in templates by stripping out whitespace characters between HTML and django template tags.
+Django application, providing simple template loader. It reduces HTML output in templates by stripping out whitespace characters between HTML and django template tags.
 
 Things to note:
 * It **does not** make any fancy compression, to do that use [GZip Middleware](https://docs.djangoproject.com/en/dev/ref/middleware/#module-django.middleware.gzip).
@@ -101,3 +101,9 @@ function name(){
 ```
 
 Or just set TEMPLATE_MINIFIER_TEMPLATE_TAGS = False
+
+
+To do:
+-----------
+* Tests!
+* {% new_line %} template_tag
