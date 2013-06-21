@@ -1,24 +1,29 @@
 django-template-minifier
 ========================
 
-
 Django package, providing simple template loader. It reduces HTML output in templates by stripping out whitespace characters between HTML and django template tags.
 
 Things to note:
 * It **does not** make any fancy compression, to do that use [GZip Middleware](https://docs.djangoproject.com/en/dev/ref/middleware/#module-django.middleware.gzip).
 * To compress CSS and JS use [django-compressor](https://github.com/jezdez/django_compressor).
 
+
 Installation
 -----------
 
-* **pip install django-template-minifier** (yup we highly recommend [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does))
-* or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
+* via [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does) - yup we highly recommend it!
+
+```bash
+pip install django-template-pages
+```
+
+* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
 
 ```bash
 python setup.py install
 ```
 
-* or [download v1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your **PYTHONPATH**
+* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your **PYTHONPATH**
 
 
 Basic usage
