@@ -29,13 +29,24 @@ python setup.py install
 Basic usage
 -----------
 
-Modify Your Django project settings's module (note cached loader):
+Modify Your Django project settings's module.
+
+**For production** (note cached loader):
 
 ```python
 TEMPLATE_LOADERS = (('django.template.loaders.cached.Loader', (
         'template_minifier.template.loaders.filesystem.Loader',
         'template_minifier.template.loaders.app_directories.Loader',
     )),
+)
+```
+
+**For development** (each refresh reloads template):
+
+```python
+TEMPLATE_LOADERS = (
+    'template_minifier.template.loaders.filesystem.Loader',
+    'template_minifier.template.loaders.app_directories.Loader',
 )
 ```
 
@@ -67,8 +78,10 @@ TEMPLATE_MINIFIER = False # default = True
 * run Your own strip_function, which preprocess templates
 
 ```python
-TEMPLATE_MINIFIER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
+TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_template'
 ```
+
+(There is a typo in variable name, see #2 for details)
 
 * **use only in production**
 
