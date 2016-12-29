@@ -9,29 +9,19 @@ Things to note:
 
 
 Installation
------------
-
-* via [virtualenv](http://www.virtualenv.org/en/latest/#what-it-does) - yup we highly recommend it!
+===
 
 ```bash
 pip install django-template-minifier
 ```
 
-* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and run:
-
-```bash
-python setup.py install
-```
-
-* or [download 1.0 package](https://github.com/iRynek/django-template-minifier/archive/v1.0.zip), unzip and copy template_minifier directory to Your ``PYTHONPATH``
-
-
 Basic usage
------------
+===
 
 Modify Your Django project settings's module.
 
-**For production** (note cached loader):
+For production:
+---
 
 ```python
 TEMPLATE_LOADERS = (('django.template.loaders.cached.Loader', (
@@ -41,7 +31,11 @@ TEMPLATE_LOADERS = (('django.template.loaders.cached.Loader', (
 )
 ```
 
-**For development** (each refresh reloads template):
+Note cached loader, we prepare template only once. Be sure You **clean up Your 
+cache during deploy**.
+
+For development:
+---
 
 ```python
 TEMPLATE_LOADERS = (
@@ -50,13 +44,16 @@ TEMPLATE_LOADERS = (
 )
 ```
 
+Each refresh recalculate template.
+
 Be happy having less spaces and new lines in Your templates!
 
 
 Advanced usage:
------------
+===
 
 Using modified settings You can:
+
 * turn off stripping spaces between HTML tags
 
 ```python
@@ -83,7 +80,7 @@ TEMPLATE_MINIFER_STRIP_FUNCTION = 'template_minifier.utils.strip_spaces_in_templ
 
 (There is a typo in variable name, see #2 for details)
 
-* **use only in production**
+* use only in production
 
 ```python
 if DEBUG:
@@ -91,8 +88,17 @@ if DEBUG:
 ```
 
 Known issues:
------------
-* Don't use // one line comments in Your inline javascript &lt;script&gt; or .js templates. In some cases,
+===
+
+Templates in JS
+---
+We do not support verbatim tag. Details [here](https://github.com/iRynek/django-template-minifier/issues/3).
+PR welcome :)
+
+One line comments in JS
+---
+
+Don't use // one line comments in Your inline javascript &lt;script&gt; or .js templates. In some cases,
 if You are using lot of {% if %} there, it can comment out }; or }, for example:
 
 ```js
@@ -115,8 +121,20 @@ function name(){
 
 Or just set TEMPLATE_MINIFIER_TEMPLATE_TAGS = False
 
+Changelog:
+===
+
+Version 1.1.0
+-----------
+* Added support for [template loader changes in Django 1.9+](https://github.com/django/django/commit/fc2147152637e21bc73f991b50fa06254af02739)
+
+Version 1.0.0
+-----------
+* Initial package, no tests :/
 
 To do:
------------
+===
 * Tests!
 * {% new_line %} template_tag
+* {% space %} template_tag
+* support for {% verbatim %} tag

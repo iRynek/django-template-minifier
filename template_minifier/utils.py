@@ -17,14 +17,15 @@ def strip_spaces_in_template(template_source):
     To use Your own stripping function do not change this function, use
     **settings.TEMPLATE_MINIFIER_STRIP_FUNCTION property**!
     """
-    if (getattr(settings, 'TEMPLATE_MINIFIER_HTML_TAGS', True)):
+    if getattr(settings, 'TEMPLATE_MINIFIER_HTML_TAGS', True):
         template_source = re.sub(r'>\s+<', '><', template_source)
 
-    if (getattr(settings, 'TEMPLATE_MINIFIER_TEMPLATE_TAGS', True)):
+    if getattr(settings, 'TEMPLATE_MINIFIER_TEMPLATE_TAGS', True):
         template_source = re.sub(r'\s+{ ?%', ' {%', template_source)
         template_source = re.sub(r'% ?}\s+', '%} ', template_source)
 
     return template_source
+
 
 def get_function_from_string(string):
     """
@@ -34,6 +35,7 @@ def get_function_from_string(string):
     (modulename, function_name) = string.rsplit('.', 1)
     m = __import__(modulename, globals(), locals(), [function_name])
     return getattr(m, function_name)
+
 
 def get_template_minifier_strip_function():
     """

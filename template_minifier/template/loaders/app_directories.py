@@ -8,17 +8,11 @@ from django.template.loaders.app_directories import Loader as AppDirectoriesLoad
 
 from template_minifier.utils import get_template_minifier_strip_function
 
-class Loader(AppDirectoriesLoader):
-    def load_template_source(self, template_name, template_dirs=None):
-        (source, filepath) = super(Loader, self).load_template_source(template_name, template_dirs)
 
+class Loader(AppDirectoriesLoader):
+    def get_contents(self, origin):
+        contents = super(Loader, self).get_contents(origin)
         if getattr(settings, 'TEMPLATE_MINIFIER', True):
-            return (
-                get_template_minifier_strip_function()(source),
-                filepath
-            )
+            return get_template_minifier_strip_function()(contents)
         else:
-            return (
-                source,
-                filepath
-            )
+            return contents
